@@ -1,14 +1,14 @@
 'use strict';
-const intersect = require('intersect');
-const uniq = require('uniq');
+var intersect = require('intersect');
+var uniq = require('uniq');
 
 module.exports = function (o) {
-  const page = o.page;
-  const pages = o.pages;
-  const leftSidePages = o.sidePages ?
+  var page = o.page;
+  var pages = o.pages;
+  var leftSidePages = o.sidePages ?
     range(Math.max(page - o.sidePages, 0), page) :
     [page - 1];
-  const rightSidePages = o.sidePages ?
+  var rightSidePages = o.sidePages ?
     range(page + 1, Math.min(page + o.sidePages + 1, pages)) :
     [page + 1];
   var beginPages = o.beginPages ? range(Math.min(o.beginPages, pages)) : [];
@@ -90,8 +90,8 @@ module.exports = function (o) {
 };
 
 function range(a, b) {
-  const len = b ? b : a;
-  const ret = [];
+  var len = b ? b : a;
+  var ret = [];
   var i = b ? a : 0;
 
   for (; i < len; i++) {
